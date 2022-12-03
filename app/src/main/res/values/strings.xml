@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Salaryzer</string>
+    <string name="app_description">Статистика и анализ поступлений в одном приложении</string>
+    <string name="app_start_button">Начать</string>
+</resources>
