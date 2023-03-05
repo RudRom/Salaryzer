@@ -1,20 +1,17 @@
 package com.example.salaryzer
 
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.content.res.TypedArrayUtils.getString
+//import by.dzmitry_lakisau.month_year_picker_dialog.MonthYearPickerDialog
 import java.util.*
+import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
-    private lateinit var textDatePicker : Button
+    private lateinit var textDatePicker: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,13 +20,52 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
         textDatePicker = findViewById(R.id.btnMonthAndYear)
 
-        initDataPicker()
-
+        //Setting calendar
         val calendar = Calendar.getInstance()
 
+        // Open date picker on click
+        textDatePicker.setOnClickListener() {
+             DatePickerDialog(this, this, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show()
+
+            }
         }
 
+    override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
+        textDatePicker.setText("${getTextMonth(month + 1)} $year")
     }
+
+}
+
+    private fun getTextMonth(month: Int) : String {
+        var result = ""
+
+        result = when (month){
+            1 -> getString(R.string.JANUARY)
+            2 -> R.string.FEBRUARY.toString()
+            3 -> R.string.MARCH.toString()
+            4 -> R.string.APRIL.toString()
+            5 -> R.string.MAY.toString()
+            6 -> R.string.JUNE.toString()
+            7 -> R.string.JULY.toString()
+            8 -> R.string.AUGUST.toString()
+            9 -> R.string.SEPTEMBER.toString()
+            10 -> R.string.OCTOBER.toString()
+            11 -> R.string.NOVEMBER.toString()
+            12 -> R.string.DECEMBER.toString()
+            else -> R.string.error.toString()
+        }
+
+        return result
+    }
+
+
+    /*
+    fun onClickCalendar(view: View) {
+        intent = Intent(this, CalendarActivity::class.java)
+        startActivity(intent)
+    }
+
+}
 
     private fun initDataPicker() {
         val datePicker = DatePickerDialog.OnDateSetListener { view, year, month, day ->
@@ -37,37 +73,10 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     }
 
-    private fun updateLable(calendar: Calendar) {
 
-    }
 
-    fun getTextDate(calendar : Calendar) : String {
-        var result = ""
 
-        when (calendar.time.toString().substring(4,7)){
-            "Jan" -> result = R.string.JANUARY.toString()
-            "Feb" -> result = R.string.FEBRUARY.toString()
-            "Mar" -> result = R.string.MARCH.toString()
-            "Apr" -> result = R.string.APRIL.toString()
-            "May" -> result = getString(R.string.MAY)
-            "Jun" -> result = getString(R.string.JUNE)
-            "Jul" -> result = getString(R.string.JULY)
-            "Aug" -> result = getString(R.string.AUGUST)
-            "Sep" -> result = getString(R.string.SEPTEMBER)
-            "Oct" -> result = getString(R.string.OCTOBER)
-            "Nov" -> result = getString(R.string.NOVEMBER)
-            "Dec" -> result = getString(R.string.DECEMBER)
-            else -> result = getString(R.string.error)
-        }
-
-        return result + " " + calendar.time.toString().substring(calendar.time.toString().length - 4,calendar.time.toString().length)
-    }
-
-    fun onClickCalendar(view: View){
-        intent = Intent(this, CalendarActivity::class.java)
-        startActivity(intent)
-    }
 
 fun makeDateString(year: Int, month : Int, day: Int): String {
     return "$year $month $day"
-}
+}*/

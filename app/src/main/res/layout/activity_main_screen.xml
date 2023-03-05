@@ -59,8 +59,9 @@
                 android:layout_height="49dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:onClick="onClickCalendar"
                 android:text="@string/main_select_month_and_year" />
+                <!-- android:onClick="onClickCalendar" -->
+
 
 
         </LinearLayout>
