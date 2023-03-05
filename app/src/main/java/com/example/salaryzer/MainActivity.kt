@@ -1,5 +1,6 @@
 package com.example.salaryzer
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
@@ -7,7 +8,7 @@ import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
 //import by.dzmitry_lakisau.month_year_picker_dialog.MonthYearPickerDialog
 import java.util.*
-import kotlin.coroutines.jvm.internal.CompletedContinuation.context
+
 
 class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
@@ -36,23 +37,23 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
 }
 
+    @SuppressLint("RestrictedApi")
     private fun getTextMonth(month: Int) : String {
         var result = ""
-
         result = when (month){
-            1 -> getString(R.string.JANUARY)
-            2 -> R.string.FEBRUARY.toString()
-            3 -> R.string.MARCH.toString()
-            4 -> R.string.APRIL.toString()
-            5 -> R.string.MAY.toString()
-            6 -> R.string.JUNE.toString()
-            7 -> R.string.JULY.toString()
-            8 -> R.string.AUGUST.toString()
-            9 -> R.string.SEPTEMBER.toString()
-            10 -> R.string.OCTOBER.toString()
-            11 -> R.string.NOVEMBER.toString()
-            12 -> R.string.DECEMBER.toString()
-            else -> R.string.error.toString()
+            1 -> "Январь"
+            2 -> "Февраль"
+            3 -> "Март"
+            4 -> "Апрель"
+            5 -> "Май"
+            6 -> "Июнь"
+            7 -> "Июль"
+            8 -> "Август"
+            9 -> "Сентябрь"
+            10 -> "Октябрь"
+            11 -> "Ноябрь"
+            12 -> "Декабрь"
+            else -> "Ошибка"
         }
 
         return result

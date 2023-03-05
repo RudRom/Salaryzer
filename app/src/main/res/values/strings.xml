@@ -4,7 +4,7 @@
     <string name="app_start_button">Начать</string>
     <string name="main_button_add">Добавить</string>
     <string name="main_header_text">Поступления</string>
-    <string name="main_select_month_and_year">Выберете месяц</string>
+    <string name="main_select_month_and_year">Выберите месяц</string>
     <string name="error">Ошибка</string>
     <string name="JANUARY">Январь</string>
     <string name="FEBRUARY">Февраль</string>
