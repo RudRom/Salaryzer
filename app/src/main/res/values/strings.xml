@@ -2,4 +2,20 @@
     <string name="app_name">Salaryzer</string>
     <string name="app_description">Статистика и анализ поступлений в одном приложении</string>
     <string name="app_start_button">Начать</string>
+    <string name="main_button_add">Добавить</string>
+    <string name="main_header_text">Поступления</string>
+    <string name="main_select_month_and_year">Выберете месяц</string>
+    <string name="error">Ошибка</string>
+    <string name="JANUARY">Январь</string>
+    <string name="FEBRUARY">Февраль</string>
+    <string name="MARCH">Март</string>
+    <string name="APRIL">Апрель</string>
+    <string name="MAY">Май</string>
+    <string name="JUNE">Июнь</string>
+    <string name="JULY">Июль</string>
+    <string name="AUGUST">Август</string>
+    <string name="SEPTEMBER">Сентябрь</string>
+    <string name="OCTOBER">Октябрь</string>
+    <string name="NOVEMBER">Ноябрь</string>
+    <string name="DECEMBER">Декабрь</string>
 </resources>
