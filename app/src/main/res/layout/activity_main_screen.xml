@@ -62,6 +62,18 @@
                 android:text="@string/main_select_month_and_year" />
                 <!-- android:onClick="onClickCalendar" -->
 
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart"
+                android:layout_width="320dp"
+                android:layout_height="320dp"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            </com.github.mikephil.charting.charts.PieChart>
+
 
 
         </LinearLayout>
