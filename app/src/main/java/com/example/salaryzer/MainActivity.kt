@@ -1,6 +1,5 @@
 package com.example.salaryzer
 
-import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.graphics.Color
 import android.os.Bundle
@@ -30,28 +29,7 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         textDatePicker = findViewById(R.id.btnMonthAndYear)
         pieChart = findViewById(R.id.pie_chart)
 
-        //                                                      PIE CHART
-
-        // Initialing data for pie chart
-        val pieList: ArrayList<PieEntry> = ArrayList()
-        val pieDataSet = PieDataSet(pieList, "Data for pie chart")
-
-        pieList.add(PieEntry(100f, "First label"))
-        pieList.add(PieEntry(90f, "Second label"))
-        pieList.add(PieEntry(80f, "Third label"))
-        pieList.add(PieEntry(70f, "Forth label"))
-
-        pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
-        pieDataSet.valueTextSize = 15f
-        pieDataSet.valueTextColor = Color.BLACK
-
-        // Initialing pie chart
-        val pieData = PieData(pieDataSet)
-        pieChart.data = pieData
-        pieChart.description.text = "Pie chart description"
-        pieChart.centerText = "Pie chart center text"
-        pieChart.animateY(2000)
-
+        setPieChart(ArrayList(),firstTime = true)
 
         //                                                      DATA PICKER
 
@@ -60,11 +38,45 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
         // Open date picker on click
         textDatePicker.setOnClickListener() {
-             DatePickerDialog(this, this, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show()}
+             DatePickerDialog(this,
+                 this,
+                 calendar.get(Calendar.YEAR),
+                 calendar.get(Calendar.MONTH),
+                 calendar.get(Calendar.DAY_OF_MONTH)).show()}
         }
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
-        textDatePicker.setText("${getTextMonth(month + 1)} $year")
+        val arrayPairs :ArrayList<Pair<Float, String>> = ArrayList()
+        arrayPairs.add(Pair(100f,"first"))
+        arrayPairs.add(Pair(200f,"second"))
+        setPieChart(arrayPairs ,centerText = "${getTextMonth(month + 1)} $year")
+    }
+
+    private fun setPieChart(pieArray: ArrayList<Pair<Float, String>>, firstTime: Boolean = false, centerText: String = ""){
+        // Initialing data for pie chart
+        val pieList: ArrayList<PieEntry> = ArrayList()
+        val pieDataSet = PieDataSet(pieList, "Data for pie chart")
+
+        if(firstTime){
+            pieList.add(PieEntry(100f, ""))
+
+            pieDataSet.setColors(Color.GREEN)
+            pieDataSet.valueTextSize = 15f
+            pieDataSet.valueTextColor = Color.TRANSPARENT
+            pieChart.centerText = ""
+        }
+        else{
+            for(i in pieArray)
+                pieList.add(PieEntry(i.first, i.second))
+            pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+            pieDataSet.valueTextSize = 15f
+            pieDataSet.valueTextColor = Color.BLACK
+            pieChart.centerText = centerText
+        }
+
+        pieChart.data = PieData(pieDataSet)
+        pieChart.description.text = ""
+        pieChart.animateY(500)
     }
 
 }
@@ -88,4 +100,7 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
         return result
     }
+
+
+
 
