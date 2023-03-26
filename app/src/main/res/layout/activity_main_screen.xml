@@ -60,7 +60,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/main_select_month_and_year" />
-                <!-- android:onClick="onClickCalendar" -->
+
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/pie_chart"
@@ -74,7 +74,49 @@
 
             </com.github.mikephil.charting.charts.PieChart>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/tv_averageSalary"
+                    android:layout_width="213dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="41dp"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="top"
+                    android:text="@string/main_average_salary"
+                    android:textColor="@color/primaryBlack"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_averageSalaryDigits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="41dp"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="end|top"
+                    android:text="123"
+                    android:textColor="@color/primaryBlack"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnYear"
+                style="?android:spinnerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/main_select_year" />
 
         </LinearLayout>
     </ScrollView>

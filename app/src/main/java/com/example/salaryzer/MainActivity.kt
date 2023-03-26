@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.widget.Button
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
@@ -25,16 +26,19 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
-    private lateinit var textDatePicker: Button
+    private lateinit var textDatePicker_MY: Button
+    private lateinit var textDatePicker_Y: Button
     lateinit var pieChart: PieChart
     lateinit var db: DataBase
+    var firstCalendarFlag = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_screen)
 
-        textDatePicker = findViewById(R.id.btnMonthAndYear)
+        textDatePicker_MY = findViewById(R.id.btnMonthAndYear)
+        textDatePicker_Y = findViewById(R.id.btnYear)
         pieChart = findViewById(R.id.pie_chart)
 
         setDB()
@@ -43,26 +47,46 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
         //                                                      DATA PICKER
 
-        //Setting calendar
-        val calendar = Calendar.getInstance()
+        //Setting calendars
+        val calendar_MY = Calendar.getInstance()
+        val calendar_Y = Calendar.getInstance()
+
 
         // Open date picker on click
-        textDatePicker.setOnClickListener() {
+        textDatePicker_MY.setOnClickListener() {
+            firstCalendarFlag = true
             DatePickerDialog(
                 this,
                 this,
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)
+                calendar_MY.get(Calendar.YEAR),
+                calendar_MY.get(Calendar.MONTH),
+                calendar_MY.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
+
+        textDatePicker_Y.setOnClickListener() {
+            firstCalendarFlag = false
+            DatePickerDialog(
+                this,
+                this,
+                calendar_Y.get(Calendar.YEAR),
+                calendar_Y.get(Calendar.MONTH),
+                calendar_Y.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
     }
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
-        val arrayPairs: ArrayList<Pair<Float, String>> = ArrayList()
-        arrayPairs.add(Pair(100f, "first"))
-        arrayPairs.add(Pair(200f, "second"))
-        setPieChart(arrayPairs, centerText = "${getTextMonth(month + 1)} $year")
+        if(firstCalendarFlag){
+            val arrayPairs: ArrayList<Pair<Float, String>> = ArrayList()
+            arrayPairs.add(Pair(100f, "first"))
+            arrayPairs.add(Pair(200f, "second"))
+            setPieChart(arrayPairs, centerText = "${getTextMonth(month + 1)} $year")
+        }
+        else{
+            textDatePicker_Y.text = year.toString()
+        }
+
     }
 
     private fun setPieChart(
@@ -72,7 +96,10 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     ) {
         // Initialing data for pie chart
         val pieList: ArrayList<PieEntry> = ArrayList()
-        val pieDataSet = PieDataSet(pieList, "Data for pie chart")
+        val pieDataSet = PieDataSet(pieList, "")
+        val legend = pieChart.getLegend()
+        val pieChartParams = pieChart.layoutParams
+        var heightPieChart = 320f
 
         if (firstTime) {
             pieList.add(PieEntry(100f, ""))
@@ -81,14 +108,29 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             pieDataSet.valueTextSize = 15f
             pieDataSet.valueTextColor = Color.TRANSPARENT
             pieChart.centerText = ""
+            legend.setEnabled(false)
         } else {
-            for (i in pieArray)
+            for (i in pieArray) {
                 pieList.add(PieEntry(i.first, i.second))
+                heightPieChart += 90f
+            }
             pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
             pieDataSet.valueTextSize = 15f
             pieDataSet.valueTextColor = Color.BLACK
             pieChart.centerText = centerText
+
+            legend.setEnabled(true)
+            legend.textSize = 30f
+            legend.setWordWrapEnabled(true)
+            legend.formSize = 30f
         }
+        // Changing heightPieChart to dp format
+        val px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, heightPieChart, resources.displayMetrics)
+
+        //Setting height of the pieChart, refering to member count
+        pieChartParams.height = px.toInt()
+        pieChart.setLayoutParams(pieChartParams)
+
 
         pieChart.data = PieData(pieDataSet)
         pieChart.description.text = ""

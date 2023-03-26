@@ -18,4 +18,6 @@
     <string name="OCTOBER">Октябрь</string>
     <string name="NOVEMBER">Ноябрь</string>
     <string name="DECEMBER">Декабрь</string>
+    <string name="main_average_salary">Средняя з/п</string>
+    <string name="main_select_year">Выберите год</string>
 </resources>
