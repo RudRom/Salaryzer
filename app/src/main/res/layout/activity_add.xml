@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -124,7 +124,6 @@
             android:layout_marginTop="35dp"
             android:background="@drawable/round_white_fill"
             android:hint="@string/add_ed_Type_salary_quantity"
-            android:inputType="textUri|textShortMessage|numberPassword"
             android:text="" />
 
 
@@ -272,7 +271,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="250dp"
                 android:layout_weight="1">
 
                 <TextView
@@ -444,9 +443,25 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_9" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </LinearLayout>
 
+        <Button
+            android:id="@+id/b_add"
+            style="@style/buttonTextStyle"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_button_orange_fill"
+            android:text="@string/main_button_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
