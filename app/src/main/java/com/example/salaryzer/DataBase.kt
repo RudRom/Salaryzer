@@ -1,7 +1,5 @@
 package com.example.salaryzer
 
-import androidx.core.text.isDigitsOnly
-
 
 class DataBase (data: String) {
 
@@ -9,6 +7,7 @@ class DataBase (data: String) {
         val date: Pair<Int, Int>
 
         val salary: ArrayList<Pair<Float, String>> = ArrayList()
+
 
         init{
             date = Pair(salaryInfo.substring(0, 2).toInt(), salaryInfo.substring(3, 7).toInt())
@@ -21,6 +20,7 @@ class DataBase (data: String) {
 
     }
     private val salaryList: ArrayList<Salary> = ArrayList()
+        get() = field
 
     init{
         val dataLines = data.lines()

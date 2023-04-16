@@ -16,7 +16,7 @@ class StartActivity : AppCompatActivity() {
 
 
      fun onClickGoToMain(view: View){
-        Log.d("Debug", "On click is done")
+        Log.d("Debug", "On click to Main is done")
         intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
      }

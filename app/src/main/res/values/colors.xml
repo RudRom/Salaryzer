@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primaryBlack">#1E1E1E</color>
     <color name="primaryOrange">#FA4A0C</color>
+    <color name="whiteInButtons">#EFF0F6</color>
+    <color name="grayCorners">#D9DBE9</color>
 </resources>

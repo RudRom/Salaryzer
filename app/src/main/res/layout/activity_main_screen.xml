@@ -7,17 +7,14 @@
     tools:context=".MainActivity">
 
     <TextView
+        style="@style/HeaderTextStyle"
         android:id="@+id/tv_mainHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="41dp"
-        android:fontFamily="@font/montserrat_semi_bold"
-        android:gravity="top"
         android:text="@string/main_header_text"
-        android:textColor="@color/primaryBlack"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,14 +22,15 @@
     <Button
         android:id="@+id/b_add"
         style="@style/buttonTextStyle"
-        android:layout_width="0sp"
+        android:layout_width="320dp"
         android:layout_height="60sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:layout_marginBottom="20sp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/round_button_orange_fill"
+        android:onClick="onClickGoToAdd"
         android:text="@string/main_button_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,13 +55,12 @@
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/round_button_white_fill"
+                android:background="@drawable/round_button_orangerounds_white_fill"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btnMonthAndYear"
                     style="?android:spinnerStyle"
-
                     android:layout_width="320dp"
                     android:layout_height="49dp"
                     android:layout_gravity="center"
@@ -123,7 +120,7 @@
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/round_button_white_fill"
+                android:background="@drawable/round_button_orangerounds_white_fill"
                 android:orientation="vertical">
 
                 <Button

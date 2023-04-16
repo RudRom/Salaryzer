@@ -20,4 +20,8 @@
     <string name="DECEMBER">Декабрь</string>
     <string name="main_average_salary">Средняя з/п</string>
     <string name="main_select_year">Выберите год</string>
+    <string name="add_newAdd_header">Новое поступление</string>
+    <string name="add_tv_typeOfSalary">Тип поступления</string>
+    <string name="add_ed_Type_salary_quantity">Введите размер поступления</string>
+    <string name="add_tv_salaryTime">Период</string>
 </resources>

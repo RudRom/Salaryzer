@@ -1,10 +1,12 @@
 package com.example.salaryzer
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
+import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +17,6 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 import java.io.BufferedReader
 import java.io.File
-import java.io.File.separator
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.InputStreamReader
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_screen)
+
 
         textDatePicker_MY = findViewById(R.id.btnMonthAndYear)
         textDatePicker_Y = findViewById(R.id.btnYear)
@@ -177,7 +179,11 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         }
     }
 
-
+    fun onClickGoToAdd(view: View){
+        Log.d("Debug", "On click to add is done")
+        intent = Intent(this, AddActivity::class.java)
+        startActivity(intent)
+    }
 
 }
 

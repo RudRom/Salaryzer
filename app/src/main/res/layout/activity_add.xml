@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_addHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="41dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="top"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/add_newAdd_header"
+            android:textColor="@color/primaryBlack"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_salaryType"
+            style="@style/TextViewStyle"
+            android:layout_width="320dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="35dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_white_fill"
+            android:text="@string/add_tv_typeOfSalary" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SalaryType1"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rectangular_view"
+                android:text="Аванс"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/SalaryType2"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                style="@style/SmallTextStyle"
+                android:background="@drawable/rectangular_view"
+                android:text="Отпускные"
+                app:layout_constraintStart_toEndOf="@+id/SalaryType1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/SalaryType3"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rectangular_view"
+                android:text="Больничный"
+                app:layout_constraintStart_toEndOf="@+id/SalaryType2"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/SalaryType4"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangular_view"
+                android:text="Зарплата"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SalaryType1" />
+
+            <TextView
+                android:id="@+id/SalaryType5"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangular_view"
+                android:text="Премиальные"
+                app:layout_constraintStart_toEndOf="@+id/SalaryType4"
+                app:layout_constraintTop_toBottomOf="@+id/SalaryType3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/et_salaryQuantity"
+            style="@style/TextViewStyle"
+            android:layout_width="320dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/round_white_fill"
+            android:hint="@string/add_ed_Type_salary_quantity"
+            android:inputType="textUri|textShortMessage|numberPassword"
+            android:text="" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SalaryQuan_example_1"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rectangular_view"
+                android:text="1 000 \u20BD"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/SalaryQuan_example_2"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                style="@style/SmallTextStyle"
+                android:background="@drawable/rectangular_view"
+                android:text="5 000 \u20BD"
+                app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/SalaryQuan_example_3"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rectangular_view"
+                android:text="10 000 \u20BD"
+                app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_2"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/SalaryQuan_example_4"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangular_view"
+                android:text="20 000 \u20BD"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SalaryQuan_example_1" />
+
+            <TextView
+                android:id="@+id/SalaryQuan_example_5"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangular_view"
+                android:text="30 000 \u20BD"
+                app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_4"
+                app:layout_constraintTop_toBottomOf="@+id/SalaryQuan_example_3" />
+
+            <TextView
+                android:id="@+id/SalaryQuan_example_6"
+                style="@style/SmallTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangular_view"
+                android:text="50 000 \u20BD"
+                app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_5"
+                app:layout_constraintTop_toBottomOf="@+id/SalaryQuan_example_3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_salaryTime"
+            style="@style/TextViewStyle"
+            android:layout_width="320dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="35dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_white_fill"
+            android:text="@string/add_tv_salaryTime" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/round_graycorners_whitefill">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="21dp">
+
+                <ImageView
+                    android:id="@+id/img_arrowLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/img_arrowleft" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/YearTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2022" />
+
+                <ImageView
+                    android:id="@+id/img_arrowRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/img_arrowright" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="21dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_month_1"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="21dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/JANUARY"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_month_2"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="21dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/FEBRUARY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_month_3"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/MARCH"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_month_4"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/APRIL"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_1" />
+
+                <TextView
+                    android:id="@+id/tv_month_5"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/MAY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_2" />
+
+                <TextView
+                    android:id="@+id/tv_month_6"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/JUNE"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_3" />
+
+                <TextView
+                    android:id="@+id/tv_month_7"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/JULY"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_4" />
+
+                <TextView
+                    android:id="@+id/tv_month_8"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/AUGUST"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_5" />
+
+                <TextView
+                    android:id="@+id/tv_month_9"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/SEPTEMBER"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_6" />
+
+                <TextView
+                    android:id="@+id/tv_month_10"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/NOVEMBER"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_7" />
+
+                <TextView
+                    android:id="@+id/tv_month_11"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/OCTOBER"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_8" />
+
+                <TextView
+                    android:id="@+id/tv_month_12"
+                    style="@style/SmallTextStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/rectangular_invisible_corners"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/DECEMBER"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_month_9" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
