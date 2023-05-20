@@ -48,11 +48,12 @@
                 style="@style/SmallTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rectangular_view"
+                android:onClick="onClickSalaryType"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
                 android:text="Аванс"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -68,6 +69,7 @@
                 style="@style/SmallTextStyle"
                 android:background="@drawable/rectangular_view"
                 android:text="Отпускные"
+                android:onClick="onClickSalaryType"
                 app:layout_constraintStart_toEndOf="@+id/SalaryType1"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,6 +84,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rectangular_view"
                 android:text="Больничный"
+                android:onClick="onClickSalaryType"
                 app:layout_constraintStart_toEndOf="@+id/SalaryType2"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TextSizeCheck" />
@@ -97,6 +100,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangular_view"
                 android:text="Зарплата"
+                android:onClick="onClickSalaryType"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SalaryType1" />
 
@@ -111,6 +115,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangular_view"
                 android:text="Премиальные"
+                android:onClick="onClickSalaryType"
                 app:layout_constraintStart_toEndOf="@+id/SalaryType4"
                 app:layout_constraintTop_toBottomOf="@+id/SalaryType3" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -142,6 +147,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rectangular_view"
                 android:text="1 000 \u20BD"
+                android:onClick="onClickSalaryQuan"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -156,6 +162,7 @@
                 style="@style/SmallTextStyle"
                 android:background="@drawable/rectangular_view"
                 android:text="5 000 \u20BD"
+                android:onClick="onClickSalaryQuan"
                 app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_1"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,6 +177,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rectangular_view"
                 android:text="10 000 \u20BD"
+                android:onClick="onClickSalaryQuan"
                 app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_2"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TextSizeCheck" />
@@ -185,6 +193,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangular_view"
                 android:text="20 000 \u20BD"
+                android:onClick="onClickSalaryQuan"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SalaryQuan_example_1" />
 
@@ -199,6 +208,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangular_view"
                 android:text="30 000 \u20BD"
+                android:onClick="onClickSalaryQuan"
                 app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_4"
                 app:layout_constraintTop_toBottomOf="@+id/SalaryQuan_example_3" />
 
@@ -213,6 +223,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangular_view"
                 android:text="50 000 \u20BD"
+                android:onClick="onClickSalaryQuan"
                 app:layout_constraintStart_toEndOf="@+id/SalaryQuan_example_5"
                 app:layout_constraintTop_toBottomOf="@+id/SalaryQuan_example_3" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -247,7 +258,7 @@
                     app:srcCompat="@drawable/img_arrowleft" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tv_year"
                     style="@style/YearTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -285,6 +296,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/JANUARY"
+                    android:onClick="onClickMonth"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -298,6 +310,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/FEBRUARY"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -313,6 +326,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/MARCH"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -327,6 +341,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/APRIL"
+                    android:onClick="onClickMonth"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_1" />
 
@@ -340,6 +355,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/MAY"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_2" />
@@ -355,6 +371,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/JUNE"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_3" />
 
@@ -369,6 +386,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/JULY"
+                    android:onClick="onClickMonth"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_4" />
 
@@ -382,6 +400,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/AUGUST"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_5" />
@@ -397,6 +416,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/SEPTEMBER"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_6" />
 
@@ -411,6 +431,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/NOVEMBER"
+                    android:onClick="onClickMonth"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_7" />
 
@@ -424,6 +445,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/OCTOBER"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_8" />
@@ -439,6 +461,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/DECEMBER"
+                    android:onClick="onClickMonth"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_month_9" />
 
@@ -458,6 +481,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_button_orange_fill"
             android:text="@string/main_button_add"
+            android:onClick="onClickGoToMain"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
